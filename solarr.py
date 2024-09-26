@@ -85,7 +85,7 @@ if st.button('Calculate'):
     st.markdown("<h4 style='color: #1F618D;'>Solar Panel Information</h4>", unsafe_allow_html=True)
     st.write(round(number_of_panels), "panels required")
     st.write(f"Panel rating: {panel_rating}W")
-    st.write(f"Estimated panel cost: ${total_panel_cost}")
+    st.write(f"Estimated panel cost: # {total_panel_cost}")
 
     st.markdown("<h3 style='color: #117A65;'>Total Estimated Cost</h3>", unsafe_allow_html=True)
     st.write(f"Total cost: # {total_battery_cost + total_panel_cost + total_inverter_cost}")
