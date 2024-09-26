@@ -51,9 +51,9 @@ panel_array = storage / sunshine
 number_of_panels = panel_array / panel_rating
 
 # Cost estimations (optional)
-battery_cost = 220
-panel_cost = 150
-inverter_cost = 1000
+battery_cost = 300000
+panel_cost = 100000
+inverter_cost = 2000000
 
 total_battery_cost = round(capacity) * battery_cost
 total_panel_cost = round(number_of_panels) * panel_cost
@@ -76,11 +76,11 @@ if st.button('Calculate'):
 
     st.markdown("<h4 style='color: #1F618D;'>Battery Information</h4>", unsafe_allow_html=True)
     st.write("Number of batteries needed:", round(capacity), f"({Battery_volt}V 220Ah)")
-    st.write(f"Estimated battery cost: ${total_battery_cost}")
+    st.write(f"Estimated battery cost: # {total_battery_cost}")
 
     st.markdown("<h4 style='color: #1F618D;'>Inverter Information</h4>", unsafe_allow_html=True)
     st.write("Inverter capacity needed:", round(Inverter_capacity), "kVA")
-    st.write(f"Estimated inverter cost: ${total_inverter_cost}")
+    st.write(f"Estimated inverter cost: # {total_inverter_cost}")
 
     st.markdown("<h4 style='color: #1F618D;'>Solar Panel Information</h4>", unsafe_allow_html=True)
     st.write(round(number_of_panels), "panels required")
@@ -88,7 +88,7 @@ if st.button('Calculate'):
     st.write(f"Estimated panel cost: ${total_panel_cost}")
 
     st.markdown("<h3 style='color: #117A65;'>Total Estimated Cost</h3>", unsafe_allow_html=True)
-    st.write(f"Total cost: ${total_battery_cost + total_panel_cost + total_inverter_cost}")
+    st.write(f"Total cost: # {total_battery_cost + total_panel_cost + total_inverter_cost}")
 
 # Footer with contact info
 st.markdown("<hr>", unsafe_allow_html=True)
