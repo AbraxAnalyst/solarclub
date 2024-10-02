@@ -59,6 +59,20 @@ total_battery_cost = round(capacity) * battery_cost
 total_panel_cost = round(number_of_panels) * panel_cost
 total_inverter_cost = inverter_cost
 
+
+#COST BENEFIT ANALYSIS 
+
+price_of_fuel = 700
+Generator_fuel_effiecieny = 9
+daily_consumption = load *Back_up_time * 0.6
+
+litres_used = daily_consumption/Generator_fuel_effiecieny
+cost_of_running = litres_used * price_of_fuel
+yearly_running_cost = cost_of_running * (366 *2)
+
+Cost_benefit = yearly_running_cost - (total_battery_cost+total_panel_cost+total_inverter_cost) 
+
+
 # Calculation button
 if st.button('Calculate'):
     # Progress bar for better user experience
@@ -89,6 +103,11 @@ if st.button('Calculate'):
 
     st.markdown("<h3 style='color: #117A65;'>Total Estimated Cost</h3>", unsafe_allow_html=True)
     st.write(f"Total cost: # {total_battery_cost + total_panel_cost + total_inverter_cost}")
+    st.write(f"Benefit Cost: # { Cost_benefit}")
+    st.write(f"Petrol Daily: # { cost_of_running}")
+    st.write(f"Petrol_Yearly: # { yearly_running_cost}")
+    
+     
 
 # Footer with contact info
 st.markdown("<hr>", unsafe_allow_html=True)
